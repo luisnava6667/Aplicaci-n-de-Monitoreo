@@ -19,5 +19,10 @@ PROD= false
 ```
 
 3. Ejecutar el comando `npm install`
+4. Levantar las base de datos con el comando
 
-4. Ejecutar `npm run dev`
+```
+docker compose up -d
+```
+
+5. Ejecutar `npm run dev`
