@@ -22,9 +22,13 @@ export class LogEntity {
     this.origin = origin
   }
   static fromJson = (json: string): LogEntity => {
-    const { message, level, origin, createdAt } = JSON.parse(json)
-    const log = new LogEntity({ message, level, origin, createdAt })
-
+    const { message, level, createdAt, origin } = JSON.parse(json.trim())
+    const log = new LogEntity({
+      message,
+      level,
+      createdAt: new Date(createdAt),
+      origin
+    })
     return log
   }
   static fromObject = (object: { [key: string]: any }): LogEntity => {
